@@ -38,8 +38,9 @@ st.write("AI权重为：", weight)
 # 保存文件
 if uploaded_file is not None:
     temp_file = NamedTemporaryFile(delete=True)
+    buffer = uploaded_file.getbuffer()
     if buffer:
-        temp_file.write(uploaded_file.getbuffer())
+        temp_file.write(buffer)
         image_file = open(temp_file.name, 'rb')
         image_bytes = image_file.read()
         st.image(image_bytes)
