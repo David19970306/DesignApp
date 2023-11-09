@@ -29,7 +29,7 @@ else:
 
 
 # 请选择一个AI权重
-weight = st.slider('ai weight:', 0, 0.1, 1)
+weight = st.slider('ai weight:', 0.0, 0.1, 1.0)
 st.write("AI权重为：", weight)
 
 # 保存文件
