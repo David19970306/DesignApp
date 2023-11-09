@@ -2,7 +2,7 @@
 import os
 import streamlit as st
 from PIL import Image
-
+from tempfile import NamedTemporaryFile
 # 创建一个文件夹用于保存上传的文件
 if not os.path.exists("uploads"):
     os.makedirs("uploads")
