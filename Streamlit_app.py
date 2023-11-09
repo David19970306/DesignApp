@@ -20,13 +20,17 @@ designStyle = st.selectbox(
    "请选择一个设计风格",
    ('北欧风格', '工业风格', '极简风格'),
    index=None,
-   placeholder="Select design style...",
+   placeholder="请选择一个设计风格...",
 )
-
 if designStyle == '北欧风格':
     st.write('北欧风格')
 else:
     st.write("你还没有选择设计风格")
+
+
+# 请选择一个AI权重
+weight = st.slider('ai weight:', 0, 0.1, 1)
+st.write("AI权重为：", weight)
 
 # 保存文件
 if uploaded_file is not None:
