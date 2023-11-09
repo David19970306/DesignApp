@@ -16,7 +16,13 @@ selected_file = st.sidebar.selectbox("选择要使用的功能", markdown_files)
 uploaded_file = st.file_uploader("选择文件", type=["png", "jpg"])
 
 # 请选择一个设计风格
-designStyle = st.radio("请选择一个设计风格", ('北欧风格', '工业风格', '极简风格'))
+designStyle = st.selectbox(
+   "请选择一个设计风格",
+   ('北欧风格', '工业风格', '极简风格'),
+   index=None,
+   placeholder="Select design style...",
+)
+
 if designStyle == '北欧风格':
     st.write('北欧风格')
 else:
