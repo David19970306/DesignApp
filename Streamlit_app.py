@@ -10,11 +10,17 @@ if not os.path.exists("uploads"):
 st.title("AI绘画体验馆")
 st.write("请上传需要设计的草图")
 markdown_files = ["AI绘画"]
-selected_file = st.sidebar.selectbox("选择要阅读的博文", markdown_files)
+selected_file = st.sidebar.selectbox("选择要使用的功能", markdown_files)
 
 # 选择文件并重命名
 uploaded_file = st.file_uploader("选择文件", type=["png", "jpg"])
 
+# 请选择一个设计风格
+designStyle = st.radio("请选择一个设计风格", ('北欧风格', '工业风格', '极简风格'))
+if designStyle == '北欧风格':
+    st.write('北欧风格')
+else:
+    st.write("你还没有选择设计风格")
 
 # 保存文件
 if uploaded_file is not None:
