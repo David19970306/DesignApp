@@ -33,12 +33,15 @@ else:
 weight = st.slider('ai weight:', 0.0, 0.1, 1.0)
 st.write("AI权重为：", weight)
 
-
+    
 
 # 保存文件
 if uploaded_file is not None:
-    if file_name.strip():
-        image = Image.open(uploaded_file.getbuffer())
-        st.image(image, caption='图片预览', use_column_width=True)
+    temp_file = NamedTemporaryFile(delete=True)
+    if buffer:
+        temp_file.write(uploaded_file.getbuffer())
+        image_file = open(temp_file.name, 'rb')
+        image_bytes = image_file.read()
+        st.image(image_bytes)
     else:
         st.error("请上传需要设计的草图")
