@@ -7,12 +7,13 @@ if not os.path.exists("uploads"):
     os.makedirs("uploads")
 
 # 页面标题和说明文字
-st.title("智能BG201作业提交")
-st.write("请上传Word类型的文件，并输入学号+姓名来命名该文件")
+st.title("AI绘画体验馆")
+st.write("请上传需要设计的草图")
+markdown_files = ["AI绘画"]
+selected_file = st.sidebar.selectbox("选择要阅读的博文", markdown_files)
 
 # 选择文件并重命名
-file_name = st.text_input("输入学号+姓名")
-uploaded_file = st.file_uploader("选择文件", type="docx")
+uploaded_file = st.file_uploader("选择文件", type=["png", "jpg"])
 
 
 # 保存文件
@@ -23,4 +24,4 @@ if uploaded_file is not None:
             f.write(uploaded_file.getbuffer())
         st.success(f"已保存文件: {file_path}")
     else:
-        st.error("请输入学号+姓名来命名文件")
+        st.error("请上传需要设计的草图")
