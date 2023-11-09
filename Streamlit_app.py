@@ -12,10 +12,7 @@ st.title("AI绘画体验馆")
 st.write("请上传需要设计的草图")
 markdown_files = ["AI绘画"]
 selected_file = st.sidebar.selectbox("选择要使用的功能", markdown_files)
-if st.button('开始生成'):
-    st.write('生成如下')
-else:
-    st.write('Goodbye')
+
 # 选择文件并重命名
 uploaded_file = st.file_uploader("选择文件", type=["png", "jpg"])
 # 保存文件
@@ -48,6 +45,10 @@ else:
 weight = st.slider('ai weight:', 0.0, 0.1, 1.0)
 st.write("AI权重为：", weight)
 
+if st.button('开始生成'):
+    st.write('生成如下')
+else:
+    st.write('Goodbye')
 
     
 
